@@ -55,9 +55,9 @@ jobs:
             TAG=$(echo "${CIRCLE_BRANCH}" | tr '._/' '-' | tr '[:upper:]' '[:lower:]')-"${CIRCLE_BUILD_NUM}"
             make docker/build
 
-            docker tag asia.gcr.io/oinume-playground-kubernetes/server:latest asia.gcr.io/oinume-playground-kubernetes/server:${TAG}
-            gcloud docker -- push asia.gcr.io/oinume-playground-kubernetes/server:latest
-            gcloud docker -- push asia.gcr.io/oinume-playground-kubernetes/server:${TAG}
+            docker tag lekcije/server:latest gcr.io/oinume-playground-kubernetes/server:${TAG}
+            gcloud docker -- push gcr.io/oinume-playground-kubernetes/server:latest
+            gcloud docker -- push gcr.io/oinume-playground-kubernetes/server:${TAG}
 
 workflows:
   version: 2
