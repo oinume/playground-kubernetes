@@ -8,7 +8,7 @@ build:
 docker/build:
 	docker build --pull -f Dockerfile \
 	--tag lekcije/server:$(IMAGE_TAG) \
-	--tag asia.gcr.io/oinume-lekcije/server:$(IMAGE_TAG) .
+	--tag asia.gcr.io/oinume-playground-kubernetes/server:$(IMAGE_TAG) .
 
 clean:
 	rm -f server
