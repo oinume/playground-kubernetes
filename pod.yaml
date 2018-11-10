@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: server
+spec:
+  containers:
+    - image: gcr.io/oinume-playground-kubernetes/server
+      imagePullPolicy: Always
+      name: server
