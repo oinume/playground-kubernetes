@@ -1,10 +1,9 @@
 IMAGE_TAG ?= latest
-VERSION_HASH_VALUE = $(shell git rev-parse HEAD | cut -c-7)
 
 all: build
 
 build:
-	go build -o server src/main.go
+	go build -o server main.go
 
 docker/build:
 	docker build --pull -f Dockerfile \
