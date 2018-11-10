@@ -42,6 +42,18 @@ kubectl create -f pod.yaml
 kubectl get pods 
 ```
 
+Connect to the pod
+
+```bash
+kubectl port-forward server 5000
+```
+
+```bash
+curl http://127.0.0.1:5000
+```
+
+You will get `Hello world`.
+
 
 ## TODO
 - Fix docker command deprecation warning
