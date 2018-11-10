@@ -53,10 +53,7 @@ jobs:
           name: "Deploy docker image to GCR"
           command: |
             TAG=$(echo "${CIRCLE_BRANCH}" | tr '._/' '-' | tr '[:upper:]' '[:lower:]')-"${CIRCLE_BUILD_NUM}"
-            echo ${TAG}
-
-            docker build --pull -f Dockerfile \
-            --tag asia.gcr.io/oinume-playground-kubernetes/server:$(TAG) .
+            make docker/build
 
             docker tag asia.gcr.io/oinume-playground-kubernetes/server:latest asia.gcr.io/oinume-playground-kubernetes/server:${TAG}
             gcloud docker -- push asia.gcr.io/oinume-playground-kubernetes/server:latest
